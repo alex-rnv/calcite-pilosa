@@ -1,3 +1,4 @@
+*NOT PRODUCTION READY, INITIAL RELEASE IS IN PROGRESS*
 # Calcite Pilosa Adapter
 > Plugin for [Apache Calcite](http://calcite.apache.org/) to query [Pilosa](https://www.pilosa.com/) distributed index using SQL.
 
