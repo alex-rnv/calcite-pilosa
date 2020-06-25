@@ -71,6 +71,6 @@ on dimension.X = facts.X
 where 
 dimension.Y = [value]
 ```
-Please, check wiki (TBD:ref) for examples and available options.  
+Please, check [wiki](https://github.com/alex-rnv/calcite-pilosa/wiki) for examples and available options.  
 
 
