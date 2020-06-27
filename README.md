@@ -65,9 +65,9 @@ jdbc:avatica:remote:url=http://<host>:<port>>/sql/v1
 select 
 count(distinct facts._id)
 from 
-pilosa.custom facts
+pilosa.facts_table facts
 join
-postgres.custom dimension
+postgres.dimenion_table dimension
 on dimension.X = facts.X
 where 
 dimension.Y = [value]
