@@ -18,7 +18,14 @@ and then translates results into JDBC ResultSet to send them back to the client.
 
 
 ### Installation
-TDB: publish artifacts first.  
+```json
+<dependency>
+  <groupId>com.alexrnv.calcite.adapter.pilosa</groupId>
+  <artifactId>calcite-pilosa</artifactId>
+  <version>0.0.1</version>
+</dependency>
+```
+<sup>note the artifact is hosted in GitHub Packages</sup>
 
 ### Usage 
 1.) Start from the configuration:
