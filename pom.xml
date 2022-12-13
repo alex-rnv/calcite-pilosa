@@ -27,12 +27,12 @@
             <groupId>org.apache.calcite</groupId>
             <artifactId>calcite-core</artifactId>
             <type>jar</type>
-            <version>1.20.0</version>
+            <version>1.32.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.calcite</groupId>
             <artifactId>calcite-core</artifactId>
-            <version>1.20.0</version>
+            <version>1.32.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
