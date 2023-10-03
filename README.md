@@ -1,3 +1,8 @@
+**Deprecation note:**    
+**Pilosa was rebranded to FeatureBase, which comes with its own [SQL support](https://docs.featurebase.com/docs/sql-guide/sql-guide-home/).**    
+**Tools like Looker can solve the problem of joining tables from different sources.**    
+**This project is no longer actively maintained.**
+
 # Calcite Pilosa Adapter
 > Plugin for [Apache Calcite](http://calcite.apache.org/) to query [Pilosa](https://www.pilosa.com/) distributed index using SQL.
 
@@ -5,13 +10,11 @@
 Pilosa is a high-performance distributed bitmap index. It has been successfully used in many data-intensive projects. 
 One of the notable applications is the [facts table in the analytical database](https://www.pilosa.com/use-cases/retail-analytics/). 
 As the core of the analytical database, Pilosa solves the computational problem efficiently. 
-One more step is required to link results with dimension tables, which is usually a part of the ETL workflow. 
-In such a scenario, the data query pattern is defined in advance. 
-Though feasible in many situations, this approach denies the client the freedom to design the query based on complementary fields in dimension tables.
-Calcite Pilosa Adapter aims to fill this gap.  
+Calcite Pilosa Adapter solves the problem of linking the Pilosa table with supplementary dimension tables from other databases, like Postgres, making Pilosa a powerful 
+exploration tool for business intelligence.
 
 ### How it works?
-Calcite Pilosa adapter works as a proxy. Clients connect with JDBC compatible driver and query the data with SQL,
+The Calcite Pilosa adapter works as a proxy. Clients connect with JDBC-compatible drivers and query the data with SQL,
 adapter translates queries into Pilosa Query language ([PQL](https://www.pilosa.com/docs/latest/query-language/)),
 and then translates results into JDBC ResultSet to send them back to the client.
 
@@ -61,7 +64,7 @@ try {
 ```
 Your service is now listening for JDBC connections.
 
-3.) Connect from you favourite JDBC client.    
+3.) Connect from your favourite JDBC client.    
 Clients should use [Avatica](https://calcite.apache.org/avatica/) JDBC driver ([mvn](https://mvnrepository.com/artifact/org.apache.calcite.avatica/avatica)). Use version 1.14.0 or later.     
 ```
 jdbc:avatica:remote:url=http://<host>:<port>>/sql/v1
@@ -73,7 +76,7 @@ count(distinct facts._id)
 from 
 pilosa.facts_table facts
 join
-postgres.dimenion_table dimension
+postgres.dimension_table dimension
 on dimension.X = facts.X
 where 
 dimension.Y = [value]
